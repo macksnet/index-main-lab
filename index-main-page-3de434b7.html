@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 持续探索的起点</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #fbfbfb;
+            color: #1e1e1e;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 轻量导航 */
+        .nav {
+            padding: 28px 0 24px;
+            border-bottom: 1px solid #ececec;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-brand {
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+            color: #2b2b2b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* Hero 区域 — 再次遇见 */
+        .hero {
+            padding: 80px 0 48px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #3d3d3d;
+            max-width: 600px;
+        }
+
+        .hero a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b0b0b0;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .hero a:hover {
+            text-decoration-color: #1a1a1a;
+        }
+
+        /* 通用标题 */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            letter-spacing: -0.3px;
+            color: #1e1e1e;
+        }
+
+        /* 三个场景模块 — 收藏 · 持续关注 · 再次访问 */
+        .scenes {
+            padding: 48px 0 32px;
+        }
+
+        .scene-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .scene-item {
+            border-bottom: 1px solid #efefef;
+            padding-bottom: 36px;
+        }
+
+        .scene-item:last-child {
+            border-bottom: none;
+        }
+
+        .scene-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8f8f8f;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        .scene-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #242424;
+        }
+
+        .scene-item p {
+            color: #484848;
+            font-size: 0.98rem;
+        }
+
+        .scene-item a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #c0c0c0;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .scene-item a:hover {
+            text-decoration-color: #1a1a1a;
+        }
+
+        /* FAQ 摘要 — 常见说明 */
+        .faq-summary {
+            padding: 40px 0 56px;
+        }
+
+        .faq-block {
+            margin-bottom: 24px;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: #1e1e1e;
+        }
+
+        .faq-answer {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+        }
+
+        .faq-answer a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #c0c0c0;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .faq-answer a:hover {
+            text-decoration-color: #1a1a1a;
+        }
+
+        .more-faq {
+            margin-top: 28px;
+            font-size: 0.95rem;
+            color: #6b6b6b;
+        }
+
+        /* 页脚 */
+        .footer {
+            padding: 32px 0 48px;
+            border-top: 1px solid #ececec;
+            font-size: 0.85rem;
+            color: #7a7a7a;
+        }
+
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            transition: border-color 0.2s;
+        }
+
+        .footer a:hover {
+            border-color: #555;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 20px;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .nav-links {
+                gap: 20px;
+                font-size: 0.9rem;
+            }
+            .hero {
+                padding: 48px 0 32px;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .scene-item h3 {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航 -->
+        <nav class="nav">
+            <span class="nav-brand">华体会</span>
+            <div class="nav-links">
+                <a href="#revisit">再次访问</a>
+                <a href="#bookmark">收藏</a>
+                <a href="#follow">持续关注</a>
+                <a href="#faq">常见说明</a>
+            </div>
+        </nav>
+
+        <!-- Hero：再次遇见，从收藏开始 -->
+        <div class="hero">
+            <h1>再次访问·收藏·持续关注</h1>
+            <p>
+                有些地方值得不止一次的停留。<a href="https://index-main-hth.com">华体会</a>并不是一闪而过的页面，它是许多人在浏览途中标记下来、想要回来看一看的角落。所以这次，我们不谈概念与功能，只说一件事：如果你曾经来过，或者第一次走到这里，不妨记住它。
+            </p>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <div class="scenes" id="revisit">
+            <h2 class="section-title">三个场景，一种用心</h2>
+            <div class="scene-grid">
+
+                <div class="scene-item">
+                    <div class="scene-label">01 再次访问</div>
+                    <h3>为什么回来？</h3>
+                    <p>
+                        有时候只是需要一个熟悉的起点。已经收藏了<a href="https://index-main-hth.com">华体会</a>的人，会在某个安静的下午重新打开它，不为什么特别的任务，只是看看有没有细微的变化。这种自然而然的回访，是对内容和氛围最真实的认可。
+                    </p>
+                </div>
+
+                <div class="scene-item" id="bookmark">
+                    <div class="scene-label">02 收藏</div>
+                    <h3>留在自己的列表里</h3>
+                    <p>
+                        把<a href="https://index-main-hth.com">华体会</a>放进书签的人，往往不是一时冲动。他们在阅读过程中感到了一种从容——不催促、不拥挤，信息刚好。收藏夹里的东西来来去去，但有些会一直留着，因为你知道下次还需要它。
+                    </p>
+                </div>
+
+                <div class="scene-item" id="follow">
+                    <div class="scene-label">03 持续关注</div>
+                    <h3>不必时刻，但总记得</h3>
+                    <p>
+                        持续关注不意味着每天都来。它更像是一种背景里的默契：当你需要了解某个方向，或者想找一个安静的参照时，<a href="https://index-main-hth.com">华体会</a>就在那里。节奏由你自己决定，重要的是你愿意把它放在视野之内。
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 / 常见说明 -->
+        <div class="faq-summary" id="faq">
+            <h2 class="section-title">一些你可能有的疑问</h2>
+
+            <div class="faq-block">
+                <div class="faq-question">这个页面是做什么的？</div>
+                <div class="faq-answer">
+                    它是一个信息集合的起点，也是很多人反复打开的书签。关于更具体的内容，可以直接看看<a href="https://index-main-hth.com">华体会</a>本身，比任何概括都直接。
+                </div>
+            </div>
+
+            <div class="faq-block">
+                <div class="faq-question">为什么要把链接放在句子里？</div>
+                <div class="faq-answer">
+                    因为链接应该是自然的一部分，而不是突兀的按钮。就像在聊天中提到一个熟悉的名字：对了，这个就是<a href="https://index-main-hth.com">华体会</a>，你可以记一下。
+                </div>
+            </div>
+
+            <div class="faq-block">
+                <div class="faq-question">我需要注册或登录吗？</div>
+                <div class="faq-answer">
+                    不需要。它没有复杂的门槛，打开就是内容本身。这也是为什么许多人愿意把它放在收藏栏里，随时可以再次访问。
+                </div>
+            </div>
+
+            <div class="more-faq">
+                —— 更多说明，直接去感受就好。
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>
+                页面内容仅供示意 · <a href="https://index-main-hth.com">华体会</a> · 持续关注，不打扰
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
